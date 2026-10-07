@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Appropedia Admin</title>
+	<link rel="stylesheet" type="text/css" href="admin.css" />
+	<script src="admin.js"></script>
+	<script src="//www.mediawiki.org/w/index.php?title=MediaWiki:Gadget-Global-WikitextParser.js&action=raw&ctype=text/javascript"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="utf-8" />
+</head>
+<body>
+	<div id="appropedia">
+		<main id="appropedia-main">
+			<div id="appropedia-filters">
+				<select name="type" class="appropedia-filter" id="appropedia-filter-type">
+					<option value="">Any type</option>
+					<option value="Solar cooker">Solar cooker</option>
+					<option value="Solar dehydrator">Solar dehydrator</option>
+				</select>
+				<select name="status" class="appropedia-filter" id="appropedia-filter-status">
+					<option value="">Any status</option>
+					<option value="in progress">In progress</option>
+					<option value="idea">Idea</option>
+					<option value="designed">Designed</option>
+					<option value="modelled">Modelled</option>
+					<option value="prototyped">Prototyped</option>
+					<option value="verified">Verified</option>
+					<option value="deployed">Deployed</option>
+					<option value="clinical trial">Clinical trial</option>
+					<option value="commercialized">Commercialized</option>
+				</select>
+				<select name="environment" class="appropedia-filter" id="appropedia-filter-environment">
+					<option value="">Any environment</option>
+					<option value="city">City</option>
+					<option value="desert">Desert</option>
+					<option value="forest">Forest</option>
+					<option value="jungle">Jungle</option>
+				</select>
+				<select name="sdg" class="appropedia-filter" id="appropedia-filter-sdg">
+					<option value="">Any SDG</option>
+					<option value="SDG01 No poverty">01 No poverty</option>
+					<option value="SDG02 Zero hunger">02 Zero hunger</option>
+					<option value="SDG03 Good health and well-being">03 Good health and well-being</option>
+					<option value="SDG04 Quality education">04 Quality education</option>
+					<option value="SDG05 Gender equality">05 Gender equality</option>
+					<option value="SDG06 Clean water and sanitation">06 Clean water and sanitation</option>
+					<option value="SDG07 Affordable and clean energy">07 Affordable and clean energy</option>
+					<option value="SDG08 Decent work and economic growth">08 Decent work and economic growth</option>
+					<option value="SDG09 Industry innovation and infrastructure">09 Industry, innovation and infrastructure</option>
+					<option value="SDG10 Reduced inequalities">10 Reduced inequalities</option>
+					<option value="SDG11 Sustainable cities and communities">11 Sustainable cities and communities</option>
+					<option value="SDG12 Responsible consumption and production">12 Responsible consumption and production</option>
+					<option value="SDG13 Climate action">13 Climate action</option>
+					<option value="SDG14 Life below water">14 Life below water</option>
+					<option value="SDG15 Life on land">15 Life on land</option>
+					<option value="SDG16 Peace justice and strong institutions">16 Peace, justice and strong institutions</option>
+					<option value="SDG17 Partnerships for the goals">17 Partnerships for the goals</option>
+				</select>
+				<select name="language" class="appropedia-filter" id="appropedia-filter-language">
+					<option value="">Any language</option>
+					<option value="en">English</option>
+					<option value="es">Español</option>
+				</select>
+				<select name="year" class="appropedia-filter" id="appropedia-filter-year">
+					<option value="">Any year</option>
+					<option value="2025">2025</option>
+					<option value="2024">2024</option>
+					<option value="2023">2023</option>
+					<option value="2022">2022</option>
+					<option value="2021">2021</option>
+					<option value="2020">2020</option>
+					<option value="2019">2019</option>
+					<option value="2018">2018</option>
+					<option value="2017">2017</option>
+					<option value="2016">2016</option>
+					<option value="2015">2015</option>
+					<option value="2014">2014</option>
+					<option value="2013">2013</option>
+					<option value="2012">2012</option>
+					<option value="2011">2011</option>
+					<option value="2010">2010</option>
+					<option value="2009">2009</option>
+					<option value="2008">2008</option>
+					<option value="2007">2007</option>
+					<option value="2006">2006</option>
+					<option value="2005">2005</option>
+				</select>
+			</div>
+			<table id="appropedia-table">
+				<thead>
+					<tr id="appropedia-table-head">
+						<th>Title</th>
+						<th>Description</th>
+						<th>Image</th>
+						<th>Type</th>
+						<th>Status</th>
+						<th>Language</th>
+						<th>Year</th>
+					</tr>
+				</thead>
+				<tbody id="appropedia-table-body"></tbody>
+			</table>
+		</main>
+	</div>
+</body>
+	
+<template id="project-row-template">
+	<tr class="project-row">
+		<td class="project-row-title" contenteditable="true"></td>
+		<td class="project-row-description" contenteditable="true"></td>
+		<td class="project-row-image" contenteditable="true"></td>
+		<td class="project-row-type" contenteditable="true"></td>
+		<td class="project-row-status" contenteditable="true"></td>
+		<td class="project-row-language" contenteditable="true"></td>
+		<td class="project-row-year" contenteditable="true"></td>
+	</tr>
+</template>
+
+<template id="edit-button-template">
+	<button class="edit-button">
+		<svg width="10px" height="10px" viewBox="0 0 512 512">
+			<path d="M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z" />
+		</svg>
+	</button>
+</template>
+
+</html>

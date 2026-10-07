@@ -1,0 +1,213 @@
+body {
+	background: #fafafa;
+	color: #002544;
+	font-family: Arial;
+	margin: 0;
+	padding: 1em;
+}
+#appropedia {
+	margin: auto;
+	width: 1000px;
+	max-width: 100%;
+}
+#appropedia-header {
+	text-align: center;
+	margin: 3em 0;
+}
+#appropedia-logo {
+	max-width: 100%;
+	height: auto;
+}
+#appropedia-main {
+	margin: 3em 0;
+}
+#appropedia-filters {
+	margin: 1em 0;
+	overflow: scroll;
+	padding: .5em 0;
+	white-space: nowrap;
+}
+.appropedia-filter {
+	appearance: none;
+	background-color: #fff;
+	background-image: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAdVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhMdQaAAAAJ3RSTlMAAAECAwQGBwsOFBwkJTg5RUZ4eYCHkJefpaytrsXGy8zW3+Do8vNn0bsyAAAAYElEQVR42tXROwJDQAAA0Ymw1p9kiT+L5P5HVEi3qJn2lcPjtIuzUIJ/rhIGy762N3XaThqMN1ZPALsZPEzG1x8LrFL77DHBnEMxBewz0fJ6LyFHTPL7xhwzWYrJ9z22AqmQBV757MHfAAAAAElFTkSuQmCC );
+	background-position: 100%;
+	background-repeat: no-repeat;
+	border: 1px solid #aaa;
+	border-radius: 1em;
+	font: inherit;
+	padding: .5em 2em .5em 1em;
+}
+#appropedia-filter-type {
+	width: 112px;
+}
+#appropedia-filter-status {
+	width: 124px;
+}
+#appropedia-filter-language {
+	width: 149px;
+}
+#appropedia-filter-sdg {
+	width: 117px;
+}
+
+#appropedia-cards {
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat( auto-fit, minmax( 300px, 1fr ) );
+	margin: 1em 0;
+	width: auto;
+}
+
+.project-card {
+	background: white;
+	border: 1px solid #aaa;
+	cursor: pointer;
+}
+.project-card-thumb {
+	float: right;
+	margin: 1em;
+	object-fit: cover;
+	width: 100px;
+	height: 100px;
+}
+.project-card-thumb img {
+	object-fit: cover;
+}
+.project-card-title {
+	font-size: 1em;
+	font-weight: normal;
+	margin: 1em;
+}
+
+#bookmarks-button {
+	box-shadow: 2px 2px 5px #aaa;
+	cursor: pointer;
+	font-size: 1.3em;
+	padding: .5em 1em;
+	position: fixed;
+	left: 1em;
+	bottom: 1em;
+}
+
+#add-project-button {
+	box-shadow: 2px 2px 5px #aaa;
+	cursor: pointer;
+	font-size: 1.3em;
+	padding: .5em 1em;
+	position: fixed;
+	right: 1em;
+	bottom: 1em;
+}
+#add-project-form label {
+	display: block;
+	margin: 1em 0;
+}
+#add-project-form input,
+#add-project-form textarea {
+	border: 1px solid #aaa;
+	box-sizing: border-box;
+	font: inherit;
+	margin: .2em 0;
+	padding: .5em;
+	width: 100%;
+}
+#add-project-form button {
+	background: #36c;
+	border: none;
+	color: white;
+	cursor: pointer;
+	font: inherit;
+	margin: .2em 0;
+	padding: .5em 1em;
+}
+
+#project-dialog {
+	margin: 1em;
+}
+#project-dialog-header {
+	margin: 1em 0;
+}
+#project-dialog-title {
+	display: inline;
+}
+#project-dialog-title-link {
+	color: inherit;
+}
+#project-dialog-bookmark-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	line-height: 1em;
+	font-size: 1.5em;
+	margin-left: .2em;
+	padding: 0;
+	vertical-align: middle;
+}
+#project-dialog-thumb {
+	float: right;
+	margin: 0 0 1em 1em;
+}
+#project-dialog-data {
+	display: grid;
+	grid-gap: .2em 1em;
+	grid-template-columns: max-content;
+	margin: .5em 0 0 0;
+}
+#project-dialog-data dt {
+	font-weight: bold;
+}
+#project-dialog-data dd {
+	grid-column-start: 2;
+	margin: 0;
+}
+#project-dialog-toc {
+	margin: 1em 0;
+}
+
+#bookmarks-dialog-pdf-button {
+	cursor: pointer;
+	font: inherit;
+	margin: .2em 0;
+	padding: .5em 1em;
+}
+#bookmarks-dialog-cards {
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat( auto-fit, minmax( 300px, 1fr ) );
+	margin: 1em 0;
+	width: auto;
+}
+
+#appropedia-dialog {
+	border: 1px solid #aaa;
+	padding: 0;
+	width: 800px;
+	max-width: 100%;
+}
+#appropedia-dialog-close-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	float: right;
+	font: inherit;
+	font-size: 2em;
+	margin: .5em;
+}
+#appropedia-dialog-close-button:focus-visible {
+	outline: none;
+}
+#appropedia-dialog-content {
+	overflow: hidden;
+	padding: 1em;
+}
+
+#appropedia-footer {
+	border-top: 1px solid #aaa;
+	margin: 3em 0;
+	padding: 1em;
+	text-align: center;
+}
+#appropedia-footer a {
+	margin-right: 10px;
+}

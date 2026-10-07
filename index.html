@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Appropedia, the appropriate technology encyclopedia</title>
+	<link rel="stylesheet" type="text/css" href="appropedia.css" />
+	<script src="appropedia.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="utf-8" />
+</head>
+<body>
+	<div id="appropedia">
+		<header id="appropedia-header">
+			<a href="https://www.appropedia.org/apps/projects/">
+				<img id="appropedia-logo" width="300" height="60" title="Appropedia, the appropriate technology encyclopedia" src="images/logo.svg" />
+			</a>
+		</header>
+		<main id="appropedia-main">
+			<div id="appropedia-filters">
+				<select name="type" class="appropedia-filter" id="appropedia-filter-type">
+					<option value="">Any type</option>
+					<option value="Bamboo construction">Bamboo construction</option>
+					<option value="Compost bin">Compost bin</option>
+					<option value="Composting toilet">Composting toilet</option>
+					<option value="Green computing">Green computing</option>
+					<option value="Greenhouse">Greenhouse</option>
+					<option value="Greywater">Greywater</option>
+					<option value="Pedal powered generator">Pedal powered generator</option>
+					<option value="Photovoltaic device">Photovoltaic device</option>
+					<option value="Photovoltaic system">Photovoltaic system</option>
+					<option value="Rainwater harvesting">Rainwater harvester</option>
+					<option value="Solar cooker">Solar cooker</option>
+					<option value="Solar dehydrator">Solar dehydrator</option>
+					<option value="Vermicompost">Vermicompost</option>
+					<option value="Water filter">Water filter</option>
+					<option value="Water pump">Water pump</option>
+				</select>
+				<select name="status" class="appropedia-filter" id="appropedia-filter-status">
+					<option value="">Any status</option>
+					<option value="in progress">In progress</option>
+					<option value="idea">Idea</option>
+					<option value="designed">Designed</option>
+					<option value="modelled">Modelled</option>
+					<option value="prototyped">Prototyped</option>
+					<option value="verified">Verified</option>
+					<option value="deployed">Deployed</option>
+					<option value="clinical trial">Clinical trial</option>
+					<option value="commercialized">Commercialized</option>
+				</select>
+				<select name="environment" class="appropedia-filter" id="appropedia-filter-environment">
+					<option value="">Any environment</option>
+					<option value="city">City</option>
+					<option value="desert">Desert</option>
+					<option value="forest">Forest</option>
+					<option value="jungle">Jungle</option>
+				</select>
+				<select name="sdg" class="appropedia-filter" id="appropedia-filter-sdg">
+					<option value="">Any SDG</option>
+					<option value="SDG01 No poverty">01 No poverty</option>
+					<option value="SDG02 Zero hunger">02 Zero hunger</option>
+					<option value="SDG03 Good health and well-being">03 Good health and well-being</option>
+					<option value="SDG04 Quality education">04 Quality education</option>
+					<option value="SDG05 Gender equality">05 Gender equality</option>
+					<option value="SDG06 Clean water and sanitation">06 Clean water and sanitation</option>
+					<option value="SDG07 Affordable and clean energy">07 Affordable and clean energy</option>
+					<option value="SDG08 Decent work and economic growth">08 Decent work and economic growth</option>
+					<option value="SDG09 Industry innovation and infrastructure">09 Industry, innovation and infrastructure</option>
+					<option value="SDG10 Reduced inequalities">10 Reduced inequalities</option>
+					<option value="SDG11 Sustainable cities and communities">11 Sustainable cities and communities</option>
+					<option value="SDG12 Responsible consumption and production">12 Responsible consumption and production</option>
+					<option value="SDG13 Climate action">13 Climate action</option>
+					<option value="SDG14 Life below water">14 Life below water</option>
+					<option value="SDG15 Life on land">15 Life on land</option>
+					<option value="SDG16 Peace justice and strong institutions">16 Peace, justice and strong institutions</option>
+					<option value="SDG17 Partnerships for the goals">17 Partnerships for the goals</option>
+				</select>
+				<select name="language" class="appropedia-filter" id="appropedia-filter-language">
+					<option value="">Any language</option>
+					<option value="en">English</option>
+					<option value="es">Español</option>
+				</select>
+				<select name="year" class="appropedia-filter" id="appropedia-filter-year">
+					<option value="">Any year</option>
+					<option value="2025">2025</option>
+					<option value="2024">2024</option>
+					<option value="2023">2023</option>
+					<option value="2022">2022</option>
+					<option value="2021">2021</option>
+					<option value="2020">2020</option>
+					<option value="2019">2019</option>
+					<option value="2018">2018</option>
+					<option value="2017">2017</option>
+					<option value="2016">2016</option>
+					<option value="2015">2015</option>
+					<option value="2014">2014</option>
+					<option value="2013">2013</option>
+					<option value="2012">2012</option>
+					<option value="2011">2011</option>
+					<option value="2010">2010</option>
+					<option value="2009">2009</option>
+					<option value="2008">2008</option>
+					<option value="2007">2007</option>
+					<option value="2006">2006</option>
+					<option value="2005">2005</option>
+				</select>
+			</div>
+			<div id="appropedia-cards">Searching...</div>
+			<button id="bookmarks-button">Bookmarks</button>
+			<button id="add-project-button">Add your project</button>
+		</main>
+		<footer id="appropedia-footer">
+			<a href="">Privacy</a>
+			<a href="">Contact</a>
+			<a href="https://www.appropedia.org/Welcome_to_Appropedia">Wiki</a>
+		</footer>
+	</div>
+	<dialog id="appropedia-dialog">
+		<button id="appropedia-dialog-close-button">&#x2715;</button>
+		<div id="appropedia-dialog-content"></div>
+	</dialog>
+</body>
+
+<template id="project-dialog-template">
+	<div id="project-dialog">
+		<div id="project-dialog-header">
+			<h3 id="project-dialog-title"><a id="project-dialog-title-link" target="_blank"></a></h3>
+			<button id="project-dialog-bookmark-button">&#9734;</button>
+		</div>
+		<img id="project-dialog-thumb" />
+		<p id="project-dialog-description"></p>
+		<dl id="project-dialog-data">
+			<dt>Type</dt>
+			<dd id="project-dialog-type">Unknown</dd>
+			<dt>Status</dt>
+			<dd id="project-dialog-status">Unknown</dd>
+			<dt>Year</dt>
+			<dd id="project-dialog-year">Unknown</dd>
+			<dt>Language</dt>
+			<dd id="project-dialog-language">Unknown</dd>
+			<dt>Authors</dt>
+			<dd id="project-dialog-authors">Unknown</dd>
+		</dl>
+		<div id="project-dialog-toc">Loading table of contents...</div>
+	</div>
+</template>
+
+<template id="add-project-form-template">
+	<form id="add-project-form">
+		<h2>Share your project</h2>
+		<p>This form will create a basic entry for your project. Later you can correct or expand it. Note that only the first two fields are required. All others are suggested.</p>
+		<label>Title<input name="title" /></label>
+		<label>Description<textarea name="description"></textarea></label>
+		<button id="add-project-form-button">Publish</button>
+	</form>
+</template>
+
+<template id="project-card-template">
+	<div class="project-card">
+		<img class="project-card-thumb" />
+		<h3 class="project-card-title"></h3>
+	</div>
+</template>
+
+<template id="bookmarks-dialog-template">
+	<div id="bookmarks-dialog">
+		<h2>Your bookmarks</h2>
+		<p>Here you can save your favorite projects. To add or remove a project from your bookmarks, open the project and click the star icon &#9734; next to its title.</p>
+		<div id="bookmarks-dialog-cards"></div>
+		<button id="bookmarks-dialog-pdf-button">Download your bookmarks as PDF</button>
+	</div>
+</template>
+
+</html>
